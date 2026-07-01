@@ -13,7 +13,6 @@
     --hh-text: #F5F5F5;
     --hh-muted: #A0A0A0;
     --hh-green: #2E7D32;
-    --hh-amber: #C77700;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -33,22 +32,14 @@
     border-radius: 16px;
     padding: 24px 20px 28px;
   }
-  .logo-row {
-    text-align: center;
-    margin-bottom: 4px;
-  }
+  .logo-row { text-align: center; margin-bottom: 4px; }
   .logo-row .brand {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: var(--hh-muted);
   }
-  h1 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 8px 0 4px;
-  }
+  h1 { text-align: center; font-size: 20px; font-weight: 700; margin: 8px 0 4px; }
   .subtitle {
     text-align: center;
     font-size: 13px;
@@ -56,13 +47,7 @@
     margin-bottom: 20px;
     line-height: 1.4;
   }
-  label {
-    display: block;
-    font-size: 13px;
-    color: var(--hh-muted);
-    margin-bottom: 6px;
-    margin-top: 14px;
-  }
+  label { display: block; font-size: 13px; color: var(--hh-muted); margin-bottom: 6px; margin-top: 14px; }
   input {
     width: 100%;
     background: #2A2A2A;
@@ -72,10 +57,7 @@
     color: var(--hh-text);
     font-size: 16px;
   }
-  input:focus {
-    outline: none;
-    border-color: var(--hh-red);
-  }
+  input:focus { outline: none; border-color: var(--hh-red); }
   .location-status {
     margin-top: 14px;
     padding: 12px 14px;
@@ -89,22 +71,11 @@
   }
   .location-status.ok { color: #81C784; }
   .location-status.error { color: #E57373; }
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--hh-muted);
-    flex-shrink: 0;
-  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--hh-muted); flex-shrink: 0; }
   .dot.ok { background: var(--hh-green); }
   .dot.error { background: var(--hh-red); }
-  .dot.pulse {
-    animation: pulse 1.2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+  .dot.pulse { animation: pulse 1.2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   button.sos {
     width: 100%;
     margin-top: 22px;
@@ -121,10 +92,7 @@
   }
   button.sos:active { transform: scale(0.98); }
   button.sos:hover { background: var(--hh-red-dark); }
-  button.sos:disabled {
-    background: #555;
-    cursor: not-allowed;
-  }
+  button.sos:disabled { background: #555; cursor: not-allowed; }
   .disclaimer {
     text-align: center;
     font-size: 11px;
@@ -132,38 +100,19 @@
     margin-top: 14px;
     line-height: 1.4;
   }
-  .success-screen, .error-screen {
-    text-align: center;
-    padding: 20px 0;
-  }
+  .success-screen, .error-screen { text-align: center; padding: 20px 0; }
   .success-screen .icon, .error-screen .icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 64px; height: 64px; border-radius: 50%;
     margin: 0 auto 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-size: 32px;
   }
   .success-screen .icon { background: var(--hh-green); }
   .error-screen .icon { background: var(--hh-red); }
-  .success-screen h2, .error-screen h2 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  .success-screen p, .error-screen p {
-    font-size: 14px;
-    color: var(--hh-muted);
-    line-height: 1.5;
-  }
+  .success-screen h2, .error-screen h2 { font-size: 18px; margin-bottom: 8px; }
+  .success-screen p, .error-screen p { font-size: 14px; color: var(--hh-muted); line-height: 1.5; }
   .hidden { display: none; }
-  .field-error {
-    font-size: 12px;
-    color: #E57373;
-    margin-top: 4px;
-    display: none;
-  }
+  .field-error { font-size: 12px; color: #E57373; margin-top: 4px; display: none; }
 </style>
 </head>
 <body>
@@ -175,11 +124,11 @@
 
   <form id="sosForm">
     <label for="nombre">Tu nombre completo</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Ej. María González" required autocomplete="name">
+    <input type="text" id="nombre" placeholder="Ej. María González" required autocomplete="name">
     <div class="field-error" id="nombreError">Por favor ingresa tu nombre.</div>
 
     <label for="telefono">Tu número de teléfono</label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Ej. (555) 123-4567" required autocomplete="tel">
+    <input type="tel" id="telefono" placeholder="Ej. (555) 123-4567" required autocomplete="tel">
     <div class="field-error" id="telefonoError">Por favor ingresa un teléfono válido.</div>
 
     <div class="location-status" id="locationStatus">
@@ -207,17 +156,15 @@
   <div class="error-screen">
     <div class="icon">!</div>
     <h2>No pudimos enviar la alerta</h2>
-    <p id="errorMessage">Hubo un problema de conexión. Intenta de nuevo o llama directamente a nuestro equipo.</p>
+    <p>Hubo un problema de conexión. Intenta de nuevo o llama directamente a nuestro equipo.</p>
     <button class="sos" style="margin-top:18px" onclick="location.reload()">Reintentar</button>
   </div>
 </div>
 
 <script>
-  // URL del backend (Render/Vercel) que envía el correo. Reemplazar al desplegar.
   const BACKEND_URL = "https://hh360.onrender.com/api/sos";
 
   let coords = null;
-  let locationError = null;
 
   const locationStatus = document.getElementById('locationStatus');
   const locationDot = document.getElementById('locationDot');
@@ -243,26 +190,16 @@
     locationText.textContent = message;
   }
 
-  function requestLocation() {
-    if (!navigator.geolocation) {
-      locationError = 'Geolocalización no disponible en este dispositivo.';
-      setLocationState('error', locationError);
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      function(pos) {
-        coords = { lat: pos.coords.latitude, lng: pos.coords.longitude, accuracy: pos.coords.accuracy };
-        setLocationState('ok', 'Ubicación obtenida correctamente.');
-      },
-      function(err) {
-        locationError = 'No se pudo obtener tu ubicación (' + err.message + ').';
-        setLocationState('error', 'No se pudo obtener tu ubicación. Puedes enviar la alerta sin ella.');
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-    );
-  }
-
-  requestLocation();
+  navigator.geolocation
+    ? navigator.geolocation.getCurrentPosition(
+        pos => {
+          coords = { lat: pos.coords.latitude, lng: pos.coords.longitude, accuracy: pos.coords.accuracy };
+          setLocationState('ok', 'Ubicación obtenida correctamente.');
+        },
+        err => setLocationState('error', 'No se pudo obtener tu ubicación. Puedes enviar la alerta sin ella.'),
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      )
+    : setLocationState('error', 'Geolocalización no disponible en este dispositivo.');
 
   document.getElementById('sosForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -273,31 +210,20 @@
     const telefonoError = document.getElementById('telefonoError');
 
     let valid = true;
-    if (!nombre) {
-      nombreError.style.display = 'block';
-      valid = false;
-    } else {
-      nombreError.style.display = 'none';
-    }
-    if (!telefono || telefono.length < 7) {
-      telefonoError.style.display = 'block';
-      valid = false;
-    } else {
-      telefonoError.style.display = 'none';
-    }
+    if (!nombre) { nombreError.style.display = 'block'; valid = false; } else { nombreError.style.display = 'none'; }
+    if (!telefono || telefono.length < 7) { telefonoError.style.display = 'block'; valid = false; } else { telefonoError.style.display = 'none'; }
     if (!valid) return;
 
     sosButton.disabled = true;
     sosButton.textContent = 'ENVIANDO…';
 
     const payload = {
-      nombre: nombre,
-      telefono: telefono,
+      nombre,
+      telefono,
       latitud: coords ? coords.lat : null,
       longitud: coords ? coords.lng : null,
       precision_metros: coords ? Math.round(coords.accuracy) : null,
-      fecha_hora: new Date().toISOString(),
-      mapa_url: coords ? ('https://maps.google.com/?q=' + coords.lat + ',' + coords.lng) : null
+      mapa_url: coords ? `https://maps.google.com/?q=${coords.lat},${coords.lng}` : null
     };
 
     try {
@@ -307,14 +233,13 @@
         body: JSON.stringify(payload)
       });
 
-      if (!res.ok) throw new Error('Error del servidor: ' + res.status);
+      if (!res.ok) throw new Error('Error del servidor');
 
       document.getElementById('mainCard').classList.add('hidden');
       document.getElementById('successCard').classList.remove('hidden');
     } catch (err) {
       document.getElementById('mainCard').classList.add('hidden');
       document.getElementById('errorCard').classList.remove('hidden');
-      console.error(err);
     }
   });
 </script>
